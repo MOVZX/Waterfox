@@ -1120,7 +1120,7 @@ BrowserGlue.prototype = {
         const { BootstrapLoader } = ChromeUtils.import(
           "resource:///modules/BootstrapLoader.jsm"
         );
-        AddonManager.addExternalExtensionLoader(BootstrapLoader);
+        lazy.AddonManager.addExternalExtensionLoader(BootstrapLoader);
       break;
       case "notifications-open-settings":
         this._openPreferences("privacy-permissions");
@@ -1379,7 +1379,7 @@ BrowserGlue.prototype = {
       resolve => (this._firstWindowLoaded = resolve)
     );
 
-    WaterfoxGlue.init();
+    lazy.WaterfoxGlue.init();
   },
 
   // cleanup (called on application shutdown)
